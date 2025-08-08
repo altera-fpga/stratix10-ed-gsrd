@@ -41,6 +41,11 @@ set_false_path -from * -to [get_ports {fpga_led_pio[1]}]
 set_false_path -from * -to [get_ports {fpga_led_pio[2]}]
 set_false_path -from * -to [get_ports {fpga_led_pio[3]}]
 
+set_output_delay -clock MAIN_CLOCK 5 [get_ports {fpga_led_pio[0]}] -add_delay
+set_output_delay -clock MAIN_CLOCK 5 [get_ports {fpga_led_pio[1]}] -add_delay
+set_output_delay -clock MAIN_CLOCK 5 [get_ports {fpga_led_pio[2]}] -add_delay
+set_output_delay -clock MAIN_CLOCK 5 [get_ports {fpga_led_pio[3]}] -add_delay
+
 @@if {$hps_mdio1_q1_en == 1 || $hps_mdio1_q4_en == 1} {
 set_max_skew -to [get_ports "emac1_mdc"] 2
 set_max_skew -to [get_ports "emac1_mdio"] 2
@@ -69,8 +74,6 @@ create_generated_clock -name {soc_inst|hps_mge|alt_mge_phy_2|alt_mge_phy_inst|pr
 set_clock_groups -asynchronous -group [get_clocks {*tx_clkout*}] -group [get_clocks {*rx_clkout*}]
 
 @@}
-
-set_output_delay -clock MAIN_CLOCK 5 [get_ports {fpga_led_pio[3]}] -add_delay
 
 set_false_path -from [get_ports {fpga_reset_n[0]}] -to *
 
