@@ -748,5 +748,7 @@ set_instance_assignment -name SLEW_RATE 1 -to mux_io_1v8_20
 set_global_assignment -name PROMOTE_WARNING_TO_ERROR 332148
 # Promote pins without location assignments to errors
 set_global_assignment -name PROMOTE_WARNING_TO_ERROR 12677
+#Disable message 19958 due to ENABLE_NO_HIPI_INITIALIZATION_FLOW; Refer HSD:14022937742
+set_global_assignment -name MESSAGE_DISABLE 19958
 
 project_close
