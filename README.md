@@ -21,7 +21,7 @@ This is applicable to all designs.
   - SGMII with HPS EMAC and 1G/2.5G/5G/10G Multi-Rate Ethernet PHY Intel FPGA IP
 
 ## Dependency
-* Altera Quartus Prime 25.1.1
+* Altera Quartus Prime 25.3
 * Supported Board
   - Intel Stratix 10 SX SoC Development Kit
 
