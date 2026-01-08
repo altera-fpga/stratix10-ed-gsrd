@@ -131,6 +131,7 @@ add_component_param "altera_in_system_sources_probes src_prb_rst
 add_component_param "altera_avalon_sysid_qsys sysid
                     IP_FILE_PATH ip/$qsys_name/sysid.ip 
                     id $SYSID
+                    USE_LIVE_TIMESTAMP 1
                     "
 
 if {$board == "devkit" || $board == "atso12" || $board == "ashfield" || $board == "klamath"} {
