@@ -16,12 +16,9 @@ This is applicable to all designs.
   - SYSID
   - Programmable I/O (PIO) IP for controlling DIPSW, PushButton, and LEDs)
   - FPGA On-Chip Memory
-## Advanced feature
-  - PCIe Rootport IP
-  - SGMII with HPS EMAC and 1G/2.5G/5G/10G Multi-Rate Ethernet PHY Intel FPGA IP
 
 ## Dependency
-* Altera Quartus Prime 25.3
+* Altera Quartus Prime 25.3.1
 * Supported Board
   - Intel Stratix 10 SX SoC Development Kit
 
@@ -34,20 +31,10 @@ This design boots from SD/MMC.
 ```bash
 make s10-htile-soc-devkit-baseline-all
 ```
-### HPS Serial Gigabit Media Independent Interface (SGMII)
-This design boots from SD/MMC and enabled SGMII with HPS EMAC and 1G/2.5G/5G/10G Multi-Rate Ethernet PHY Intel FPGA IP
-```bash
-make s10-htile-soc-devkit-sgmii-all
-```
 ### NAND
 This design boots from nand.
 ```bash
 make s10-htile-soc-devkit-nand-all
-```
-### PCIe Gen3x8
-This design boots from SD/MMC and has PCIe RootPort IP.
-```bash
-make s10-htile-soc-devkit-pcie-gen3x8-all
 ```
 
 ## Install location

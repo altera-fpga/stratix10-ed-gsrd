@@ -122,9 +122,7 @@ endef
 # Create the recipes by calling create_ghrd_target on each design
 # Stratix 10
 $(eval $(call create_legacy_ghrd_target, s10_soc_devkit_ghrd, s10-htile-soc-devkit-oobe-baseline, ghrd_1sx280hu2f50e1vgas, generate-s10-htile-soc-devkit-oobe-baseline, $(INSTALL_ROOT)/designs))
-$(eval $(call create_legacy_ghrd_target, s10_soc_devkit_ghrd, s10-htile-soc-devkit-oobe-sgmii, ghrd_1sx280hu2f50e1vgas, generate-s10-htile-soc-devkit-oobe-sgmii, $(INSTALL_ROOT)/designs))
 $(eval $(call create_legacy_ghrd_target, s10_soc_devkit_ghrd, s10-htile-soc-devkit-nand-baseline, ghrd_1sx280hu2f50e1vgas, generate-s10-htile-soc-devkit-nand-baseline, $(INSTALL_ROOT)/designs))
-$(eval $(call create_legacy_ghrd_target, s10_soc_devkit_ghrd, s10-htile-soc-devkit-oobe-pcie-gen3x8, ghrd_1sx280hu2f50e1vgas, generate-s10-htile-soc-devkit-oobe-pcie-gen3x8, $(INSTALL_ROOT)/designs))
 
 ###############################################################################
 #                          UTILITY TARGETS
@@ -220,9 +218,7 @@ endef
 
 # Stratix 10
 $(eval $(call create_fsbl_insertion_target, s10_soc_devkit_ghrd, s10-htile-soc-devkit-oobe-baseline, ghrd_1sx280hu2f50e1vgas, $(S10_FSBL_IHEX), hps_debug, $(INSTALL_ROOT)/designs))
-$(eval $(call create_fsbl_insertion_target, s10_soc_devkit_ghrd, s10-htile-soc-devkit-oobe-sgmii, ghrd_1sx280hu2f50e1vgas, $(S10_FSBL_IHEX), hps_debug, $(INSTALL_ROOT)/designs))
 $(eval $(call create_fsbl_insertion_target, s10_soc_devkit_ghrd, s10-htile-soc-devkit-nand-baseline, ghrd_1sx280hu2f50e1vgas, $(S10_FSBL_IHEX), hps_debug, $(INSTALL_ROOT)/designs))
-$(eval $(call create_fsbl_insertion_target, s10_soc_devkit_ghrd, s10-htile-soc-devkit-oobe-pcie-gen3x8, ghrd_1sx280hu2f50e1vgas, $(S10_FSBL_IHEX), hps_debug, $(INSTALL_ROOT)/designs))
 
 # Include not_shipped Makefile if present
 -include not_shipped/Makefile.mk

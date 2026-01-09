@@ -838,9 +838,28 @@ build-s10-htile-soc-devkit-oobe-pr_alternate-rbf:
 generate-s10-htile-soc-devkit-nand-baseline:
 	make generate_from_tcl_internal QUARTUS_DEVICE=1SX280HU2F50E1VGAS BOOTS_FIRST=hps DAUGHTER_CARD=devkit_dc_nand
 
+.PHONY: generate-s10-htile-soc-devkit-emmc-baseline
+generate-s10-htile-soc-devkit-emmc-baseline:
+	make generate_from_tcl_internal QUARTUS_DEVICE=1SX280HU2F50E1VGAS BOOTS_FIRST=hps DAUGHTER_CARD=devkit_dc_emmc
+
 .PHONY: generate-s10-htile-soc-devkit-oobe-pcie-gen3x8
 generate-s10-htile-soc-devkit-oobe-pcie-gen3x8:
 	make generate_from_tcl_internal QUARTUS_DEVICE=1SX280HU2F50E1VGAS BOOTS_FIRST=hps ENABLE_PCIE=1
+
+.PHONY: generate-fpga_first
+generate-fpga_first:
+	make generate_from_tcl_internal BOOTS_FIRST=fpga HPS_ENABLE_SGMII=0 ENABLE_PCIE=0 ENABLE_PARTIAL_RECONFIGURATION=0
+
+.PHONY: generate-pr
+generate-pr:
+	make generate_from_tcl_internal BOOTS_FIRST=fpga ENABLE_PARTIAL_RECONFIGURATION=1
+
+.PHONY: build-pr_alternate-rbf
+build-pr_alternate-rbf:
+	quartus_cdb ghrd_1sx280lu2f50e2vg.qpf -c ghrd_1sx280lu2f50e2vg --export_partition root_partition --snapshot final --file base_static.qdb
+	qsys-generate --quartus-project=ghrd_1sx280lu2f50e2vg.qpf --clear-output-directory --rev=alternate_persona pr_r0_per.qsys --upgrade-ip-cores
+	qsys-generate --quartus-project=ghrd_1sx280lu2f50e2vg.qpf --clear-output-directory --rev=alternate_persona pr_r0_per.qsys --synthesis=VERILOG
+	quartus_sh --flow compile ghrd_1sx280lu2f50e2vg.qpf -c alternate_persona
 
 ################################################
 
