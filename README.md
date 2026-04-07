@@ -18,9 +18,9 @@ This is applicable to all designs.
   - FPGA On-Chip Memory
 
 ## Dependency
-* Altera Quartus Prime 25.3.1
+* Altera Quartus Prime 26.1
 * Supported Board
-  - Intel Stratix 10 SX SoC Development Kit
+  - Stratix 10 SX SoC Development Kit
 
 ## Tested Platform for the GHRD Make flow
 * SUSE Linux Enterprise Server 15 SP4
@@ -29,12 +29,17 @@ This is applicable to all designs.
 ### Baseline
 This design boots from SD/MMC.
 ```bash
-make s10-htile-soc-devkit-baseline-all
+make s10-htile-soc-devkit-oobe-baseline-all
 ```
 ### NAND
-This design boots from nand.
+This design boots from NAND.
 ```bash
-make s10-htile-soc-devkit-nand-all
+make s10-htile-soc-devkit-nand-baseline-all
+```
+### EMMC
+This design boots from EMMC.
+```bash
+make s10-htile-soc-devkit-emmc-baseline-all
 ```
 
 ## Install location

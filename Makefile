@@ -91,10 +91,7 @@ $(strip $(2))-package-design: | $(strip $(5))
 
 .PHONY: $(strip $(2))-build
 $(strip $(2))-build: | $(strip $(1))/output_files
-	cd $(strip $(1)) && quartus_syn $(strip $(3))
-	cd $(strip $(1)) && quartus_fit $(strip $(3))
-	cd $(strip $(1)) && quartus_asm $(strip $(3))
-	cd $(strip $(1)) && quartus_sta $(strip $(3)) --mode=finalize
+	cd $(strip $(1)) && quartus_sh --flow compile $(strip $(3)) -c $(strip $(3))
 
 .PHONY: $(strip $(2))-sw-build
 $(strip $(2))-sw-build:
@@ -123,6 +120,7 @@ endef
 # Stratix 10
 $(eval $(call create_legacy_ghrd_target, s10_soc_devkit_ghrd, s10-htile-soc-devkit-oobe-baseline, ghrd_1sx280hu2f50e1vgas, generate-s10-htile-soc-devkit-oobe-baseline, $(INSTALL_ROOT)/designs))
 $(eval $(call create_legacy_ghrd_target, s10_soc_devkit_ghrd, s10-htile-soc-devkit-nand-baseline, ghrd_1sx280hu2f50e1vgas, generate-s10-htile-soc-devkit-nand-baseline, $(INSTALL_ROOT)/designs))
+$(eval $(call create_legacy_ghrd_target, s10_soc_devkit_ghrd, s10-htile-soc-devkit-emmc-baseline, ghrd_1sx280hu2f50e1vgas, generate-s10-htile-soc-devkit-emmc-baseline, $(INSTALL_ROOT)/designs))
 
 ###############################################################################
 #                          UTILITY TARGETS
@@ -219,6 +217,7 @@ endef
 # Stratix 10
 $(eval $(call create_fsbl_insertion_target, s10_soc_devkit_ghrd, s10-htile-soc-devkit-oobe-baseline, ghrd_1sx280hu2f50e1vgas, $(S10_FSBL_IHEX), hps_debug, $(INSTALL_ROOT)/designs))
 $(eval $(call create_fsbl_insertion_target, s10_soc_devkit_ghrd, s10-htile-soc-devkit-nand-baseline, ghrd_1sx280hu2f50e1vgas, $(S10_FSBL_IHEX), hps_debug, $(INSTALL_ROOT)/designs))
+$(eval $(call create_fsbl_insertion_target, s10_soc_devkit_ghrd, s10-htile-soc-devkit-emmc-baseline, ghrd_1sx280hu2f50e1vgas, $(S10_FSBL_IHEX), hps_debug, $(INSTALL_ROOT)/designs))
 
 # Include not_shipped Makefile if present
 -include not_shipped/Makefile.mk
