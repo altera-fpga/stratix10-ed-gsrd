@@ -15,27 +15,21 @@ This design boots from SD/MMC.
 ```bash
 make generate-s10-htile-soc-devkit-oobe-baseline
 ```
-### HPS Serial Gigabit Media Independent Interface (SGMII)
-This design boots from SD/MMC and enabled SGMII with HPS EMAC and 1G/2.5G/5G/10G Multi-Rate Ethernet PHY Intel FPGA IP
-```bash
-make generate-s10-htile-soc-devkit-oobe-sgmii
-```
 ### NAND
-This design boots from nand.
+This design boots from NAND.
 ```bash
 make generate-s10-htile-soc-devkit-nand-baseline
 ```
-### PCIe Gen3x8
-This design boots from SD/MMC and has PCIe RootPort IP.
-Refer: [L-Tile and H-Tile Avalon Memory-mapped Intel FPGA IP for PCI Express* User Guide](https://www.intel.com/content/www/us/en/docs/programmable/683667/23-4/introduction.html) and [Stratix 10 PCIe Root Port with MSI](https://www.rocketboards.org/foswiki/Projects/Stratix10PCIeRootPortWithMSI) for more information.
+### EMMC
+This design boots from EMMC.
 ```bash
-make generate-s10-htile-soc-devkit-oobe-pcie-gen3x8
+make generate-s10-htile-soc-devkit-emmc-baseline
 ```
 
 ## GHRD Overview
 
 ### Hard Processor System (HPS)
-The GHRD HPS configuration matches the board schematic. Refer to [Stratix 10 Hard Processor System Technical Reference Manual](https://www.intel.com/content/www/us/en/docs/programmable/683222/current) and [Intel Stratix 10 Hard Processor System Component Reference Manual](https://www.intel.com/content/www/us/en/docs/programmable/683516/current) for more information on HPS configuration.
+The GHRD HPS configuration matches the board schematic. Refer to [Stratix 10 Hard Processor System Technical Reference Manual](https://www.intel.com/content/www/us/en/docs/programmable/683222/current) and [Stratix 10 Hard Processor System Component Reference Manual](https://www.intel.com/content/www/us/en/docs/programmable/683516/current) for more information on HPS configuration.
 
 ### HPS External Memory Interfaces (EMIF)
 The GHRD HPS EMIF configuration matches the board schematic. Refer to
@@ -44,7 +38,7 @@ The GHRD HPS EMIF configuration matches the board schematic. Refer to
 ### HPS-to-FPGA Address Map for all designs
 The MPU region provide windows of 4 GB into the FPGA slave address space. The lower 1.5 GB of this space is mapped to two separate addresses - firstly from 0x8000_0000 to 0xDFFF_FFFF and secondly from 0x20_0000_0000 to 0x20_5FFF_FFFF. The following table lists the offset of each peripheral from the HPS-to-FPGA bridge in the FPGA portion of the SoC.
 
-Refer to [Intel Stratix 10 Hard Processor System Address Map and Register Definitions](https://www.intel.com/content/www/us/en/programmable/hps/stratix-10/hps.html) for details.
+Refer to [Stratix 10 Hard Processor System Address Map and Register Definitions](https://www.intel.com/content/www/us/en/programmable/hps/stratix-10/hps.html) for details.
 
 | Peripheral | Address Offset | Size (bytes) | Attribute |
 | :-- | :-- | :-- | :-- |
@@ -95,7 +89,7 @@ The Address Map for this design is consolidated in this section.
 #### HPS-to-FPGA Address Map for PCIe design
 The MPU region provide windows of 4 GB into the FPGA slave address space. The lower 1.5 GB of this space is mapped to two separate addresses - firstly from 0x8000_0000 to 0xDFFF_FFFF and secondly from 0x20_0000_0000 to 0x20_5FFF_FFFF. The following table lists the offset of each peripheral from the HPS-to-FPGA bridge in the FPGA portion of the SoC.
 
-Refer to [Intel Stratix 10 Hard Processor System Address Map and Register Definitions](https://www.intel.com/content/www/us/en/programmable/hps/stratix-10/hps.html) for details.
+Refer to [Stratix 10 Hard Processor System Address Map and Register Definitions](https://www.intel.com/content/www/us/en/programmable/hps/stratix-10/hps.html) for details.
 
 | Peripheral | Address Offset | Size (bytes) | Attribute |
 | :-- | :-- | :-- | :-- |
