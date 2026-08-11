@@ -29,16 +29,16 @@ make generate-s10-htile-soc-devkit-emmc-baseline
 ## GHRD Overview
 
 ### Hard Processor System (HPS)
-The GHRD HPS configuration matches the board schematic. Refer to [Stratix 10 Hard Processor System Technical Reference Manual](https://www.intel.com/content/www/us/en/docs/programmable/683222/current) and [Stratix 10 Hard Processor System Component Reference Manual](https://www.intel.com/content/www/us/en/docs/programmable/683516/current) for more information on HPS configuration.
+The GHRD HPS configuration matches the board schematic. Refer to [Stratix 10 Hard Processor System Technical Reference Manual](https://docs.altera.com/r/docs/683222/current) and [Stratix 10 Hard Processor System Component Reference Manual](https://docs.altera.com/r/docs/683222/current) for more information on HPS configuration.
 
 ### HPS External Memory Interfaces (EMIF)
 The GHRD HPS EMIF configuration matches the board schematic. Refer to
-[External Memory Interfaces Stratix 10 FPGA IP User Guide](https://www.intel.com/content/www/us/en/docs/programmable/683741/current) for more information on HPS EMIF configuration.
+[External Memory Interfaces Stratix 10 FPGA IP User Guide](https://docs.altera.com/r/docs/683741/current) for more information on HPS EMIF configuration.
 
 ### HPS-to-FPGA Address Map for all designs
 The MPU region provide windows of 4 GB into the FPGA slave address space. The lower 1.5 GB of this space is mapped to two separate addresses - firstly from 0x8000_0000 to 0xDFFF_FFFF and secondly from 0x20_0000_0000 to 0x20_5FFF_FFFF. The following table lists the offset of each peripheral from the HPS-to-FPGA bridge in the FPGA portion of the SoC.
 
-Refer to [Stratix 10 Hard Processor System Address Map and Register Definitions](https://www.intel.com/content/www/us/en/programmable/hps/stratix-10/hps.html) for details.
+Refer to [Stratix 10 Hard Processor System Address Map and Register Definitions](https://docs.altera.com/v/u/resources/r102597/stratix-10-hps-register-map) for details.
 
 | Peripheral | Address Offset | Size (bytes) | Attribute |
 | :-- | :-- | :-- | :-- |
@@ -81,7 +81,7 @@ The CSR is used to controll the following IPs:
 ### JTAG master interfaces
 The GHRD JTAG master interfaces allows you to access peripherals in the FPGA with System Console, through the JTAG master module. This access does not rely on HPS software drivers.
 
-Refer to this [Guide](https://www.intel.com/content/www/us/en/docs/programmable/683819/current/analyzing-and-debugging-designs-with-84752.html) for information about system console.
+Refer to this [Guide](https://docs.altera.com/r/docs/683819/26.1/quartus-prime-pro-edition-user-guide-debug-tools/analyzing-and-debugging-designs-with-system-console) for information about system console.
 
 ### Address Map Specific for PCIE design
 The Address Map for this design is consolidated in this section.
@@ -89,7 +89,7 @@ The Address Map for this design is consolidated in this section.
 #### HPS-to-FPGA Address Map for PCIe design
 The MPU region provide windows of 4 GB into the FPGA slave address space. The lower 1.5 GB of this space is mapped to two separate addresses - firstly from 0x8000_0000 to 0xDFFF_FFFF and secondly from 0x20_0000_0000 to 0x20_5FFF_FFFF. The following table lists the offset of each peripheral from the HPS-to-FPGA bridge in the FPGA portion of the SoC.
 
-Refer to [Stratix 10 Hard Processor System Address Map and Register Definitions](https://www.intel.com/content/www/us/en/programmable/hps/stratix-10/hps.html) for details.
+Refer to [Stratix 10 Hard Processor System Address Map and Register Definitions](https://docs.altera.com/v/u/resources/r102597/stratix-10-hps-register-map) for details.
 
 | Peripheral | Address Offset | Size (bytes) | Attribute |
 | :-- | :-- | :-- | :-- |
@@ -117,7 +117,7 @@ This is view within pcie_0. When accessing in HPS, offset of 0xF900_0000 + 0x000
 Note: MSI and CRA IRQs are not connected to ILC.
 
 ### Interrupt Num
-The Interrupt Num in this readme are FPGA IRQ. They have offset of 17 when mapped to Generic Interrupt Controller (GIC) in device tree structure(dts). Refer to F2H FPGA Interrupt[0] in [GIC Interrupt Map for the SoC HPS](https://www.intel.com/content/www/us/en/docs/programmable/683222/current/gic-interrupt-map-for-the-soc-hps-stratix.html).
+The Interrupt Num in this readme are FPGA IRQ. They have offset of 17 when mapped to Generic Interrupt Controller (GIC) in device tree structure(dts). Refer to F2H FPGA Interrupt[0] in [GIC Interrupt Map for the SoC HPS](https://docs.altera.com/r/docs/683222/25.3.1/stratix-10-hard-processor-system-technical-reference-manual/gic-interrupt-map-for-the-soc-hps).
 Number 49 is shown for F2H FPGA Interrupt[0] as the first 32 IRQ is reserved. (49 - 32 = 17).
 
 ## Binaries location

@@ -18,7 +18,7 @@ This is applicable to all designs.
   - FPGA On-Chip Memory
 
 ## Dependency
-* Altera Quartus Prime 26.1
+* Altera Quartus Prime 26.1.1
 * Supported Board
   - Stratix 10 SX SoC Development Kit
 
