@@ -1,8 +1,9 @@
-# Stratix 10 Golden Hardware Reference Design (GHRD)
+# Stratix 10 Baseline Hardware Reference Designs
 
-The GHRD is part of the Golden System Reference Design (GSRD), which provides a complete solution, including exercising soft IP in the fabric, booting to U-Boot, then Linux, and running sample Linux applications.
+This repository contains Baseline Hardware Reference Designs for Altera Stratix 10 System On Chip (SoC) FPGA.
+This repository is part of the Baseline System Example Design, which provides a complete solution, including exercising soft IP in the fabric, booting to U-Boot, then Linux, and running sample Linux applications.
 
-Refer to the [Stratix 10 SoC GSRD](https://altera-fpga.github.io/latest/embedded-designs/stratix-10/sx/soc/gsrd/ug-gsrd-s10sx-soc/) for information about GSRD.
+Refer to the [HPS Baseline System Example Design User Guide: Stratix 10 SoC Development Kit](https://altera-fpga.github.io/latest/embedded-designs/stratix-10/sx/soc/gsrd/ug-gsrd-s10sx-soc/) for more information.
 
 This reference design demonstrating the following system integration between Hard Processor System (HPS) and FPGA IPs:
 ## Baseline feature
@@ -18,11 +19,11 @@ This is applicable to all designs.
   - FPGA On-Chip Memory
 
 ## Dependency
-* Altera Quartus Prime 26.1.1
+* Altera Quartus Prime 26.3
 * Supported Board
   - Stratix 10 SX SoC Development Kit
 
-## Tested Platform for the GHRD Make flow
+## Tested platform for the hardware build flow
 * SUSE Linux Enterprise Server 15 SP4
 
 ## Supported Designs
