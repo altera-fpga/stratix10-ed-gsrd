@@ -1,9 +1,10 @@
-# Stratix 10 Golden Hardware Reference Design (GHRD)
+# HPS Baseline System Example Design for Stratix 10 SX SoC Development Kit
 
-The GHRD is part of the Golden System Reference Design (GSRD), which provides a complete solution, including exercising soft IP in the fabric, booting to U-Boot, then Linux, and running sample Linux applications.
+This design is a Baseline Hardware Reference Design for Altera Stratix 10 System On Chip (SoC) FPGA.
+This design is part of the Baseline System Example Design, which provides a complete solution, including exercising soft IP in the fabric, booting to U-Boot, then Linux, and running sample Linux applications.
 
 ## Build Steps
-1) Customize the GHRD settings in Makefile. Only necessary when the defaults are not suitable.
+1) Customize the design settings in Makefile. Only necessary when the defaults are not suitable.
 2) Generate the Quartus Project and source files.
    - Use target from [Supported Designs](#supported-designs)
 3) Compile Quartus Project and generate the configuration file
@@ -26,13 +27,13 @@ This design boots from EMMC.
 make generate-s10-htile-soc-devkit-emmc-baseline
 ```
 
-## GHRD Overview
+## Design overview
 
 ### Hard Processor System (HPS)
-The GHRD HPS configuration matches the board schematic. Refer to [Stratix 10 Hard Processor System Technical Reference Manual](https://docs.altera.com/r/docs/683222/current) and [Stratix 10 Hard Processor System Component Reference Manual](https://docs.altera.com/r/docs/683222/current) for more information on HPS configuration.
+The HPS configuration matches the board schematic. Refer to [Stratix 10 Hard Processor System Technical Reference Manual](https://docs.altera.com/r/docs/683222/current) and [Stratix 10 Hard Processor System Component Reference Manual](https://docs.altera.com/r/docs/683222/current) for more information on HPS configuration.
 
 ### HPS External Memory Interfaces (EMIF)
-The GHRD HPS EMIF configuration matches the board schematic. Refer to
+The HPS EMIF configuration matches the board schematic. Refer to
 [External Memory Interfaces Stratix 10 FPGA IP User Guide](https://docs.altera.com/r/docs/683741/current) for more information on HPS EMIF configuration.
 
 ### HPS-to-FPGA Address Map for all designs
@@ -59,7 +60,7 @@ Note: All interrupt sources are also connected to an interrupt latency counter (
 | ILC | 0x0000_1100 | 256 | Interrupt latency counter | None |
 
 Note:
--  Only the lower three bits of LED outputs are available for software to control. The most significant bit of the LED is used in GHRD top module as heartbeat led. This LED blinks when the fpga design is loaded. Users will not be able to control this LED with HPS software, for example U-Boot or Linux.
+-  Only the lower three bits of LED outputs are available for software to control. The most significant bit of the LED is used in the design top module as heartbeat led. This LED blinks when the fpga design is loaded. Users will not be able to control this LED with HPS software, for example U-Boot or Linux.
 
 #### Lightweight HPS-to-FPGA Address Map for SGMII design
 | Peripheral | Address Offset | Size (bytes) | Attribute | Interrupt Num |
@@ -79,7 +80,7 @@ The CSR is used to controll the following IPs:
 | alt_mge_phy_2 | 0x0000_0080 | 64 | 1G/2.5G/5G/10G Multirate Ethernet PHY 2 | None |
 
 ### JTAG master interfaces
-The GHRD JTAG master interfaces allows you to access peripherals in the FPGA with System Console, through the JTAG master module. This access does not rely on HPS software drivers.
+The design JTAG master interfaces allow you to access peripherals in the FPGA with System Console, through the JTAG master module. This access does not rely on HPS software drivers.
 
 Refer to this [Guide](https://docs.altera.com/r/docs/683819/26.1/quartus-prime-pro-edition-user-guide-debug-tools/analyzing-and-debugging-designs-with-system-console) for information about system console.
 
